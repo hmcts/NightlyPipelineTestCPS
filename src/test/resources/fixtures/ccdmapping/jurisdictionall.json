@@ -20,7 +20,6 @@
     "D8PetitionerPhoneNumber" : "01234567890",
     "D8PetitionerFirstName" : "John",
     "D8PetitionerLastName" : "Smith",
-    "D8DerivedPetitionerCurrentFullName" :  null,
     "D8PetitionerNameChangedHow" : [ "marriageCertificate" ],
     "D8PetitionerNameChangedHowOtherDetails" : null,
     "D8PetitionerContactDetailsConfidential" : "share",
@@ -38,8 +37,6 @@
     "D8RespondentNameAsOnMarriageCertificate" : null,
     "D8RespondentFirstName" : "Jane",
     "D8RespondentLastName" : "Jamed",
-    "D8DerivedRespondentCurrentName" : null,
-    "D8DerivedRespondentSolicitorDetails" : null,
     "D8RespondentHomeAddress" : {
       "County" : null,
       "PostCode" : "SW9 9PE"
@@ -66,7 +63,6 @@
     "D8LegalProceedingsRelated" : [ "children" ],
     "D8LegalProceedingsDetails" : "The legal proceeding details",
     "D8ReasonForDivorce" : "unreasonable-behaviour",
-    "D8DerivedStatementOfCase" : null,
     "D8RejectStatementOfCase" : null,
     "D8ReasonForDivorceBehaviourDetails" : "My wife is having an affair this week.",
     "D8ReasonForDivorceDesertionDate" : null,
@@ -162,7 +158,6 @@
     "D8ReasonForDivorceSeperationDay" : null,
     "D8ReasonForDivorceSeperationMonth" : null,
     "D8ReasonForDivorceSeperationYear" : null,
-    "D8DerivedReasonForDivorceAdultery3dPtyNm" : null,
     "D8DerivedRespondentSolicitorAddr" : null,
     "D8DerivedLivingArrangementsLastLivedAddr" : null,
     "D8Connections" : {
