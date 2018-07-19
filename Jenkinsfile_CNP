@@ -53,6 +53,10 @@ withPipeline(type , product, component) {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/site/serenity/**/*'
     }
 
+    before('deploy:prod') {
+        error('Halting pipeline before prod stages')
+    }
+
     after('checkout') {
         echo '${product}-${component} checked out'
     }
