@@ -13,10 +13,19 @@ String component = "pfe"
 
 def type = "java"
 
+def channel = '#qa-tech'
+
     withNightlyPipeline(type, product, component) {
 
         enableCrossBrowserTest()
         enablePerformanceTest()
-        enableMutationTest()
+        after('performanceTest') {
+                try {
+                    sh './gradlew pitest'
+                } finally {
+                    steps.archiveArtifacts "build/reports/pitest/**/*.*"
+                }
 
+            }
+        enableSlackNotifications(channel)
     }
