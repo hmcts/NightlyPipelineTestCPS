@@ -17,5 +17,6 @@ def type = "java"
 
         enableCrossBrowserTest()
         enablePerformanceTest()
+        enableMutationTest()
 
     }
