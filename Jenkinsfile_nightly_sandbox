@@ -11,7 +11,7 @@ String product = "div"
 
 String component = "pfe"
 
-def type = "nodejs"
+def type = "java"
 
     withNightlyPipeline(type, product, component) {
 
