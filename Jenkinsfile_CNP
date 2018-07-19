@@ -56,5 +56,13 @@ withPipeline(type , product, component) {
     after('checkout') {
         echo '${product}-${component} checked out'
     }
-    enableSlackNotifications(channel)
+    
+    before('buildinfra:prod') {
+        error('Halt before prod')   
+    }
+    
+    before('deploy:prod') {
+        error('Halt before prod')   
+    }
+    //enableSlackNotifications(channel)
 }
