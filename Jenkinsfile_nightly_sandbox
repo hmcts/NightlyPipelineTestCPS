@@ -19,13 +19,6 @@ def channel = '#qa-tech'
 
         enableCrossBrowserTest()
         enablePerformanceTest()
-        after('performanceTest') {
-                try {
-                    sh './gradlew pitest'
-                } finally {
-                    steps.archiveArtifacts "build/reports/pitest/**/*.*"
-                }
-
-            }
+        enableMutationTest()
         enableSlackNotifications(channel)
     }
