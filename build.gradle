@@ -123,7 +123,7 @@ pitest {
                        'uk.gov.hmcts.reform.divorce.errorhandler.*']
     threads = 4
     outputFormats = ['XML', 'HTML']
-    timestampedReports = false
+    timestampedReports = true
     mutationThreshold = 50
 }
 
@@ -175,6 +175,10 @@ dependencies {
         exclude(module: 'mapstruct')
     }
 
+    compile group: 'org.pitest', name: 'pitest', version: '1.3.2'
+    compile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.3.0'
+    compile 'org.codehaus.sonar-plugins:sonar-pitest-plugin:0.5'
+
     compile group: 'org.apache.commons', name: 'commons-collections4', version: versions.commonsCollections4
     compile group: 'org.apache.commons', name: 'commons-lang3', version: versions.commonsLang3
     compile group: 'org.mapstruct', name: 'mapstruct-jdk8', version: versions.mapstruct
@@ -214,8 +218,11 @@ sonarqube {
     properties {
         property "sonar.exclusions", "**uk/gov/hmcts/reform/divorce/**/domain/**/*,**uk/gov/hmcts/reform/divorce/support/**"
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco.exec"
-        property "sonar.projectKey", "DivorceCaseProgressionService"
-        property "sonar.projectName", "Divorce :: case-progression-service"
+        property "sonar.projectKey", "NightlyPipelineCaseProgressionService"
+        property "sonar.projectName", "NightlyPipeline :: NightlyPipelineTestCPS"
+        property "sonar.host.url", "https://sonar.reform.hmcts.net/"
+        property "sonar.pitest.mode", "reuseReport"
+        property "sonar.pitest.reportsDirectory", "build/reports/pitest"
     }
 }
 
