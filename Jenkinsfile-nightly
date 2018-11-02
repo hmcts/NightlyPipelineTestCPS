@@ -14,5 +14,6 @@ String component = "pfe"
 def type = "java"
 
     withNightlyPipeline(type, product, component) {
+    env.isapi=true
     enableZapSecurityTest()
     }
